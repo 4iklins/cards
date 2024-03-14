@@ -1,20 +1,155 @@
 :root {
-	--font-family-primary: 'Roboto', sans-serif;
-   
-	// line heights
-	--line-height-s: 16px;
-	--line-height-m: 24px;
-	--line-height-l: 36px;
-   
-	// font sizes
-	--font-size-xs: 0.75rem;
-	--font-size-s: 0.875rem;
-	--font-size-m: 1rem;
-	--font-size-l: 1.125rem;
-	--font-size-xl: 1.25rem;
-	--font-size-xxl: 1.625rem;
-   
-	// font weights
-	--font-weight-regular: 400;
-	--font-weight-bold: 700;
+  --font-family-primary: 'Roboto', sans-serif;
+
+  // line heights
+  --line-height-s: 16px;
+  --line-height-m: 24px;
+  --line-height-l: 36px;
+
+  // font sizes
+  --font-size-xs: 0.75rem;
+  --font-size-s: 0.875rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-xxl: 1.625rem;
+
+  // font weights
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  // font colors
+  --font-color-primary: #fff;
+  --font-color-link: #397df6;
+}
+
+@mixin typography($fontSize, $lineHeight, $fontWeight, $fontColor) {
+  margin: 0;
+
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+  color: $fontColor;
+}
+
+.typography-h1 {
+  @include typography(
+    var(--font-size-xxl),
+    var(--line-height-l),
+    var(--font-weight-bold),
+    var(--font-color-primary)
+  );
+}
+
+.typography-h2 {
+  @include typography(
+    var(--font-size-xl),
+    var(--line-height-l),
+    var(--font-weight-bold),
+    var(--font-color-primary)
+  );
+}
+
+.typography-h3 {
+  @include typography(
+    var(--font-size-l),
+    var(--line-height-m),
+    var(--font-weight-bold),
+    var(--font-color-primary)
+  );
+}
+
+.typography-h4 {
+  @include typography(
+    var(--font-size-m),
+    var(--line-height-m),
+    var(--font-weight-bold),
+    var(--font-color-primary)
+  );
+}
+
+.typography-subtitle1 {
+  @include typography(
+    var(--font-size-m),
+    var(--line-height-m),
+    var(--font-weight-bold),
+    var(--font-color-primary)
+  );
+}
+
+.typography-subtitle2 {
+  @include typography(
+    var(--font-size-s),
+    var(--line-height-m),
+    var(--font-weight-bold),
+    var(--font-color-primary)
+  );
+}
+
+.typography-body1 {
+  @include typography(
+    var(--font-size-m),
+    var(--line-height-m),
+    var(--font-weight-regular),
+    var(--font-color-primary)
+  );
+}
+
+.typography-body2 {
+  @include typography(
+    var(--font-size-s),
+    var(--line-height-m),
+    var(--font-weight-regular),
+    var(--font-color-primary)
+  );
+}
+
+.typography-overline {
+  @include typography(
+    var(--font-size-xs),
+    var(--line-height-s),
+    var(--font-weight-bold),
+    var(--font-color-primary)
+  );
+}
+
+.typography-caption {
+  @include typography(
+    var(--font-size-xs),
+    var(--line-height-s),
+    var(--font-weight-regular),
+    var(--font-color-primary)
+  );
+
+  display: inline-block;
+  text-align: start;
+}
+
+.typography-link1 {
+  @include typography(
+    var(--font-size-s),
+    var(--line-height-m),
+    var(--font-weight-regular),
+    var(--font-color-link)
+  );
+}
+
+.typography-link2 {
+  @include typography(
+    var(--font-size-xs),
+    var(--line-height-s),
+    var(--font-weight-regular),
+    var(--font-color-link)
+  );
+}
+
+.typography-link1,
+.typography-link2 {
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
   }
+}
